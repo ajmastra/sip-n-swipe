@@ -9,7 +9,36 @@ import SwiftUI
 
 struct CocktailInfoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack (alignment: .leading) {
+            HStack {
+                Text("Old Fashioned")
+                    .font(.title)
+                    .fontWeight(.heavy)
+                
+                Spacer()
+                
+                Button {
+                    print("DEBUG: Show info here..")
+                } label: {
+                    Image(systemName: "arrow.up.circle")
+                        .fontWeight(.bold)
+                        .imageScale(.large)
+                }
+                
+            }
+            
+            Text("Whiskey | Bourbon")
+                .font(.subheadline)
+                .lineLimit(2)
+            
+
+        }
+        .foregroundStyle(.white)
+        .padding(.horizontal, 130)
+        .padding(.bottom, 24)
+        .background(
+            LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+        )
     }
 }
 

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		52B6CBCA2DC1B3E200D23862 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 52B6CBC92DC1B3D600D23862 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		52B6CB992DC1B20900D23862 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		52B6CB882DC1B20700D23862 /* sip-n-swipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sip-n-swipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6CB982DC1B20900D23862 /* sip-n-swipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sip-n-swipeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6CBA22DC1B20900D23862 /* sip-n-swipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sip-n-swipeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B6CBC92DC1B3D600D23862 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +84,7 @@
 				52B6CB9B2DC1B20900D23862 /* sip-n-swipeTests */,
 				52B6CBA52DC1B20900D23862 /* sip-n-swipeUITests */,
 				52B6CB892DC1B20700D23862 /* Products */,
+				52B6CBC92DC1B3D600D23862 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B6CBCA2DC1B3E200D23862 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

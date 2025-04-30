@@ -9,7 +9,22 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+        TabView {
+            Text("Swiping View")
+                .tabItem{ Image(systemName: "flame")}
+                .tag(0)
+            
+            Text("Recipe View")
+                .tabItem{ Image(systemName: "list.bullet")}
+                .tag(1)
+            
+            Text("Search View")
+                .tabItem{ Image(systemName: "magnifyingglass")}
+                .tag(2)
+            
+        }
+        .tint(.primary)
     }
 }
 

@@ -8,28 +8,44 @@
 import SwiftUI
 
 struct CocktailInfoView: View {
+    
+    let cocktail: Cocktail
+    @Binding var isExpanded: Bool
+    
     var body: some View {
-        VStack (alignment: .leading) {
+        VStack (alignment: .leading, spacing: 8) {
             HStack {
-                Text("Old Fashioned")
+                Text(cocktail.name)
                     .font(.title)
                     .fontWeight(.heavy)
                 
                 Spacer()
                 
                 Button {
-                    print("DEBUG: Show info here..")
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
                 } label: {
-                    Image(systemName: "arrow.up.circle")
+                    Image(systemName: isExpanded ? "arrow.down.circle" : "arrow.up.circle")
                         .fontWeight(.bold)
                         .imageScale(.large)
                 }
                 
             }
             
-            Text("Whiskey | Bourbon")
+            Text(cocktail.category ?? "")
                 .font(.subheadline)
                 .lineLimit(2)
+            
+            if isExpanded {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Ingredients:")
+                        .font(.headline)
+                    ForEach(cocktail.ingredients, id: \.self) { ingredient in
+                            Text("- \(ingredient)")
+                    }
+                }
+            }
             
 
         }
@@ -43,5 +59,6 @@ struct CocktailInfoView: View {
 }
 
 #Preview {
-    CocktailInfoView()
+    CocktailInfoView(cocktail: .mock, isExpanded: .constant(true))
 }
+

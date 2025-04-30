@@ -8,21 +8,31 @@
 import SwiftUI
 
 struct MainTabView: View {
-    var body: some View {
     
+    @StateObject var viewModel = CocktailViewModel()
+    
+    var body: some View {
         TabView {
-            Text("Swiping View")
-                .tabItem{ Image(systemName: "flame")}
+            CardStackView(viewModel: viewModel)
+                .tabItem {
+                    Image(systemName: "flame")
+                    Text("Discover")
+                }
                 .tag(0)
-            
-            Text("Recipe View")
-                .tabItem{ Image(systemName: "list.bullet")}
+
+            SavedRecipesView(viewModel: viewModel) // (You'll build this soon)
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("Saved")
+                }
                 .tag(1)
-            
+
             Text("Search View")
-                .tabItem{ Image(systemName: "magnifyingglass")}
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
                 .tag(2)
-            
         }
         .tint(.primary)
     }
@@ -31,3 +41,4 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
 }
+

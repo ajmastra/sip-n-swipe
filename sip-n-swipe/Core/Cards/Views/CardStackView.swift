@@ -8,10 +8,41 @@
 import SwiftUI
 
 struct CardStackView: View {
+    @StateObject var viewModel = CocktailViewModel()
+    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Sip n Swipe")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+
+            ZStack {
+                ForEach(viewModel.cocktails.reversed(), id: \.id) { cocktail in
+                    CardView(
+                        cocktail: cocktail,
+                        onSwipeLeft: {
+                            viewModel.removeCard(cocktail)
+                        },
+                        onSwipeRight: {
+                            viewModel.saveCocktail(cocktail)
+                            viewModel.removeCard(cocktail)
+                        }
+                    )
+                    .id(cocktail.id)
+                }
+            }
+        }
+        .onAppear {
+            if viewModel.cocktails.isEmpty {
+                viewModel.fetchRandomCocktails()
+            }
+        }
     }
+
 }
+
 
 #Preview {
     CardStackView()

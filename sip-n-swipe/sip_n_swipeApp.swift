@@ -11,7 +11,7 @@ import SwiftUI
 struct sip_n_swipeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }

@@ -22,7 +22,7 @@
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/sip-n-swipe.git
+   git clone https://github.com/ajmastra/sip-n-swipe.git
    ```
 2. Open the project in Xcode:
    ```bash
